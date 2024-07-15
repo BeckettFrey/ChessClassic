@@ -1,0 +1,248 @@
+.dot-flashing-container {
+  margin-bottom: 50px;
+}
+.dot-flashing {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: #000000;
+  animation: dot-flashing 1s infinite linear alternate;
+  animation-delay: 0.5s;
+}
+.dot-flashing::before, .dot-flashing::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+.dot-flashing::before {
+  left: -50px;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: white;
+  color: black;
+  animation: dot-flashing 1s infinite alternate;
+  animation-delay: 0s;
+}
+.dot-flashing::after {
+  left: 50px;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: white;
+  color: black;
+  animation: dot-flashing 1s infinite alternate;
+  animation-delay: 1s;
+}
+@keyframes dot-flashing {
+  0% {
+    background-color:white;
+  }
+  50%, 100% {
+    background-color: black;
+  }
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+}
+.alert {
+  width: 228px;
+  height: auto;
+  position: inline;
+  text-align: center;
+  top: 20px;
+  padding: 8px;
+  font-family: impact;
+  background-color: #ffcc00;
+  font-size: 35px;
+  color: black;
+  font-weight: bold;
+  border: 1px solid #000;
+  border-radius: 6px;
+}
+.chessboard-container {
+  position: relative;
+  width: 1200px;
+  height: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #000;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  padding: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.button:hover {
+  background-color: #0056b3;
+}
+.buttons-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.button {
+  height: 100px;
+  width: 200px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.buttons-container {
+  text-align: center;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropbtn {
+  background: linear-gradient(silver, gray);
+  color: white;
+  font-size: 55px;
+  border: none;
+  cursor: pointer;
+  padding: 15px 30px;
+  border-radius: 8px;
+  width: 200px;
+  height: 100px;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  font-size: 55px;
+  background-color: #bcb9b941;
+  min-width: 160px;
+  width: 200px;
+  height: 210px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+  z-index: 1;
+}
+.dropdown-content button {
+  width: 100%;
+  padding: 12px 16px;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 40px;
+}
+.dropdown-content button:hover {
+  background-color: #746a6a;
+  border-radius: 2px;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .dropbtn {
+  background:linear-gradient(gray, silver)
+}
+body {
+  background:linear-gradient(#945f4f, #7bbdcb)
+}
+.chess-clock {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #000000;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 225px; 
+  font-family: "Courier New", Courier, monospace; 
+  font-size: 38px;
+}
+.white-timer {
+  border-radius: 3px;
+  color: black;
+  background-color: white; 
+}
+.black-timer {
+  border-radius: 3px;
+  color: white;
+  background-color: black; 
+}
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.player-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.time {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+.option-selection {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  border-radius: 15px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: white;
+  font-family: Impact;
+  font-size: 18px;
+  width: auto;
+  height: 90px;
+  position: absolute;
+}
+.option-selection p {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  margin-top: 8px;
+}
+.option-selection button {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  color: #6a11cb;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 5px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.option-selection button:hover {
+  background-color: #6a11cb;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+.option-selection button:active {
+  background-color: #bec2c9;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+.rotated-text {
+  position: absolute;
+  top: 40%; 
+  left: -820px; 
+  transform: rotate(-45deg);
+  transform-origin: left top;
+  color: saddlebrown;
+  font-family: cursive;
+  font-size: 180px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.headers-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto; 
+  position: relative; 
+  z-index: 2;
+}
+
